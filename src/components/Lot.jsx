@@ -1,13 +1,15 @@
 import React from 'react';
 import styled from 'styled-components';
-import { stat } from 'fs';
+import { stat, unwatchFile } from 'fs';
 import { isBigIntLiteral } from '@babel/types';
 
 
 const Wrapper = styled.div`
-    width : 80%;
-    height : 80%;
+    width : 100%;
+    height : 100%;
     background-color : pink;
+    position : absolute;
+    top : 0;
 `
 
 class Lot extends React.Component{
@@ -15,6 +17,7 @@ class Lot extends React.Component{
         super(props);
         this.state = {
             num : 0,
+            input : 0
         }
     }
 
@@ -27,35 +30,116 @@ class Lot extends React.Component{
     }
 
     jb = () => {
-        let jjb = document.getElementsByClassName("jjb")[0];
-        let imgBox = document.createElement("div");
-        var img = document.createElement("img");
-        img.width = 180;
-        let myLot = new Array()
-        // console.log('out');
-        // if(parseInt(this.state.num) === 2){
-        //     console.log("in")
-        //     for(let i=0;i<parseInt(this.state.num);i++){
+        var num = parseInt(this.state.num);
+        this.setState({
+            input : this.state.input+1
+        })
+        console.log(this.state.input)
 
-        //         img[i].src = '/img/red'+[i]+'.png';
-        //         jjb.appendChild(img);
-        //     }
-        // }
-        for (let i = 0; i < parseInt(this.state.num ); i++) {
-            myLot[i] = new Image()
-            myLot[i].src = "lot" + i + ".png";
-            imgBox.appendChild(myLot[i]);
+        if(parseInt(this.state.input)!=0){        
+            console.log("asdf");
+            let jjb = document.getElementsByClassName("jjb")[0];
+            jjb.innerHTML = '';
         }
-        for (let i = 0; i < parseInt(this.state.num); i++) {
-            imgBox.innerHTML= "<img src= '/img/lot"+[i]+".png' width='180px'>"
+
+        if(num === 2){
+            this.red();
+            this.white();
         }
-        jjb.appendChild(imgBox);
+        else if(num === 3){
+            this.red();
+            this.white();
+            this.purple();
+        }
+        else if(num === 4){
+            this.red();
+            this.white();
+            this.purple();
+            this.green();
+        }
+        else if(num === 5){
+            this.red();
+            this.white();
+            this.purple();
+            this.green();
+            this.yellow();
+        }
+        else if(num === 6){
+            this.red();
+            this.white();
+            this.purple();
+            this.green();
+            this.yellow();
+            this.blue();
+        }
     }
+ 
+    two = () => {
+        this.red();
+        this.white();
+    }
+
+    red = () =>{
+        var img = document.createElement("img");
+        let jjb = document.getElementsByClassName("jjb")[0];
+        img.width = 180;
+
+        img.src = '/img/red.png';
+        jjb.appendChild(img);
+    }
+
+    white = () =>{
+        var img = document.createElement("img");
+        let jjb = document.getElementsByClassName("jjb")[0];
+        img.width = 180;
+
+        img.src = '/img/white.png';
+        jjb.appendChild(img);
+    }
+
+    purple = () => {
+        var img = document.createElement("img");
+        let jjb = document.getElementsByClassName("jjb")[0];
+        img.width = 180;
+
+        img.src = '/img/purple.png';
+        jjb.appendChild(img);
+    }
+
+    green = () => {
+        var img = document.createElement("img");
+        let jjb = document.getElementsByClassName("jjb")[0];
+        img.width = 180;
+
+        img.src = '/img/green.png';
+        jjb.appendChild(img);
+    }
+    
+    yellow = () => {
+        var img = document.createElement("img");
+        let jjb = document.getElementsByClassName("jjb")[0];
+        img.width = 180;
+
+        img.src = '/img/yellow.png';
+        jjb.appendChild(img);
+    }
+
+    blue = () => {
+        var img = document.createElement("img");
+        let jjb = document.getElementsByClassName("jjb")[0];
+        img.width = 180;
+
+        img.src = '/img/blue.png';
+        jjb.appendChild(img);
+    }
+
 
 
     //lot창 띄우고 클릭 한번 하게 만들기 제비섞기 버튼 누르면 변하게끔
     render(){
-        
+        var img = document.createElement("img");
+        let jjb = document.getElementsByClassName("jjb")[0];
+        img.width = 180;
         return(
             <>
             <Wrapper>
