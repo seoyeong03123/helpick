@@ -2,12 +2,11 @@ import React from 'react';
 import styled from 'styled-components';
 import { Link } from "react-router-dom";
 
-import Banner from '../components/Banner';
 
 const Wrapper = styled.div`
     width : 100vw;
     height : 200vh;
-    background-color : pink;
+    background-color : transparent;
     margin : 0;
     overflow-x: hidden; 
 `
@@ -15,11 +14,13 @@ const Wrapper = styled.div`
 const MainWrapper = styled.div`
     width : 100vw;
     height : 100vh;
+    display : flex;
     box-sizing : border-box;
     padding : 6vh 0 0 0;
-    background-image : url("/img/spring_note.jpg");
+    top : 0;
+    background-image: url("/img/note.png");
     background-repeat : no-repeat;
-    background-size : contain;
+    background-size : 100% 100%;
 `
 
 const MenuWrapper = styled.div`
@@ -60,6 +61,61 @@ const StyledLink = styled(Link)`
     color : black;
 
 `
+const LeftBox = styled.div`
+    width : 50%;
+    height : 100%;
+
+`
+
+const RightBox = styled(LeftBox)`
+    padding : 15vh 10vw;
+    
+`
+
+const Title = styled.div`
+    font-size : 7.2em;
+    color: darkblue;
+`
+
+const TitleText = styled.div`
+    color : black;
+    font-family: 'Hi Melody', cursive;
+    /* font-family: 'Poor Story', cursive;
+    font-family: 'Gaegu', cursive; */
+    font-size : 2em;
+
+`
+
+const GoMain = styled.div`
+    background-image : url('/img/postit-red.png');
+    background-size : contain;
+    background-repeat : no-repeat;
+    position : fixed;
+    left : 0;
+    top : 20vh;
+    width : 364px;
+    height : 82px;
+    display : flex;
+    justify-content : center;
+    align-items : center;
+    font-size : 2em;
+`
+
+const GoMenu = styled.div`
+    background-image : url('/img/postit-purple.png');
+    background-size : contain;
+    background-repeat : no-repeat;
+    position : fixed;
+    left : 0;
+    top : 35vh;
+    width : 364px;
+    height : 82px;
+    display : flex;
+    justify-content : center;
+    align-items : center;
+    font-size : 2em;
+
+`
 
 class Main extends React.Component {
 
@@ -70,12 +126,21 @@ class Main extends React.Component {
     render(){
         return(
             <>
+            <link href="https://fonts.googleapis.com/css?family=Hi+Melody&display=swap" rel="stylesheet"></link>
+            {/* <link href="https://fonts.googleapis.com/css?family=Hi+Melody|Poor+Story&display=swap" rel="stylesheet"></link> */}
+            {/* <link href="https://fonts.googleapis.com/css?family=Gaegu|Hi+Melody|Poor+Story&display=swap" rel="stylesheet"></link> */}
                 <Wrapper>
-
-                    <Banner/>
+                    <GoMain>Main</GoMain>
+                    <GoMenu>Menu</GoMenu>
 
                     <MainWrapper >
-                        asdf
+                        <LeftBox>
+
+                        </LeftBox>
+                        <RightBox>
+                            <Title>HELPICK</Title>
+                            <TitleText>당신의 선택을 도와드림</TitleText>
+                        </RightBox>
                     </MainWrapper>
 
                     <MenuWrapper>

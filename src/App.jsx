@@ -10,6 +10,7 @@ import Roulette from './routes/Roulette';
 const GlobalStyle = createGlobalStyle`
     body{
         margin : 0;
+        font-family: 'Indie Flower', cursive;
     }
 `
 
@@ -17,6 +18,7 @@ const GlobalStyle = createGlobalStyle`
 function App() {
   return (
     <div className="App">
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower&display=swap" rel="stylesheet"></link>
       <Router>
             <GlobalStyle />
                 
