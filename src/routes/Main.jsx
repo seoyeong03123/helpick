@@ -127,8 +127,7 @@ class Main extends React.Component {
         return(
             <>
             <link href="https://fonts.googleapis.com/css?family=Hi+Melody&display=swap" rel="stylesheet"></link>
-            {/* <link href="https://fonts.googleapis.com/css?family=Hi+Melody|Poor+Story&display=swap" rel="stylesheet"></link> */}
-            {/* <link href="https://fonts.googleapis.com/css?family=Gaegu|Hi+Melody|Poor+Story&display=swap" rel="stylesheet"></link> */}
+
                 <Wrapper>
                     <GoMain>Main</GoMain>
                     <GoMenu>Menu</GoMenu>
