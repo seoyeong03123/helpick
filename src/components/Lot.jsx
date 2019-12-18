@@ -7,9 +7,31 @@ import { isBigIntLiteral } from '@babel/types';
 const Wrapper = styled.div`
     width : 100%;
     height : 100%;
-    background-color : pink;
+    display : flex;
+    flex-direction : column;
+    align-items : center;
     position : absolute;
     top : 0;
+
+
+    font-size : 2em;
+    text-align : center;
+    background-color : pink;
+`
+
+const Jb = styled.div`
+        margin : 20px;
+`
+
+const Button = styled.div`
+    width : 300px;
+    height : 80px;
+    border-radius : 10px;
+    display : flex;
+    justify-content : center;
+    align-items : center;
+    background-color : rgba(255, 255, 255, 0.5);
+    color : darkblue;
 `
 
 class Lot extends React.Component{
@@ -38,8 +60,8 @@ class Lot extends React.Component{
 
         if(parseInt(this.state.input)!=0){        
             console.log("asdf");
-            let jjb = document.getElementsByClassName("jjb")[0];
-            jjb.innerHTML = '';
+            let jb = document.getElementsByClassName("jb")[0];
+            jb.innerHTML = '';
         }
 
         if(num === 2){
@@ -74,79 +96,111 @@ class Lot extends React.Component{
         }
     }
  
-    two = () => {
-        this.red();
-        this.white();
-    }
 
     red = () =>{
         var img = document.createElement("img");
-        let jjb = document.getElementsByClassName("jjb")[0];
+        let jb = document.getElementsByClassName("jb")[0];
         img.width = 180;
 
         img.src = '/img/red.png';
-        jjb.appendChild(img);
+        jb.appendChild(img);
+
+        // this.setAttribute('onclick', 'check()');
+        img.addEventListener('click', function(e){
+            var tgt = e.target;
+              tgt.parentNode.removeChild(tgt);
+              alert("통과");
+        });
     }
 
     white = () =>{
         var img = document.createElement("img");
-        let jjb = document.getElementsByClassName("jjb")[0];
+        let jb = document.getElementsByClassName("jb")[0];
         img.width = 180;
 
         img.src = '/img/white.png';
-        jjb.appendChild(img);
+        jb.appendChild(img);
+
+        img.addEventListener('click', function(e){
+            var tgt = e.target;
+              tgt.parentNode.removeChild(tgt);
+              alert("꽝");
+        });
     }
 
     purple = () => {
         var img = document.createElement("img");
-        let jjb = document.getElementsByClassName("jjb")[0];
+        let jb = document.getElementsByClassName("jb")[0];
         img.width = 180;
 
         img.src = '/img/purple.png';
-        jjb.appendChild(img);
+        jb.appendChild(img);
+
+        img.addEventListener('click', function(e){
+            var tgt = e.target;
+              tgt.parentNode.removeChild(tgt);
+              alert("통과");
+        });
     }
 
     green = () => {
         var img = document.createElement("img");
-        let jjb = document.getElementsByClassName("jjb")[0];
+        let jb = document.getElementsByClassName("jb")[0];
         img.width = 180;
 
         img.src = '/img/green.png';
-        jjb.appendChild(img);
+        jb.appendChild(img);
+
+        img.addEventListener('click', function(e){
+            var tgt = e.target;
+              tgt.parentNode.removeChild(tgt);
+              alert("통과");
+        });
     }
     
     yellow = () => {
         var img = document.createElement("img");
-        let jjb = document.getElementsByClassName("jjb")[0];
+        let jb = document.getElementsByClassName("jb")[0];
         img.width = 180;
 
         img.src = '/img/yellow.png';
-        jjb.appendChild(img);
+        jb.appendChild(img);
+
+        img.addEventListener('click', function(e){
+            var tgt = e.target;
+              tgt.parentNode.removeChild(tgt);
+              alert("통과");
+        });
     }
 
     blue = () => {
         var img = document.createElement("img");
-        let jjb = document.getElementsByClassName("jjb")[0];
+        let jb = document.getElementsByClassName("jb")[0];
         img.width = 180;
 
         img.src = '/img/blue.png';
-        jjb.appendChild(img);
-    }
+        jb.appendChild(img);
 
+        img.addEventListener('click', function(e){
+            var tgt = e.target;
+              tgt.parentNode.removeChild(tgt);
+              alert("통과");
+        });
+    }
 
 
     //lot창 띄우고 클릭 한번 하게 만들기 제비섞기 버튼 누르면 변하게끔
     render(){
         var img = document.createElement("img");
-        let jjb = document.getElementsByClassName("jjb")[0];
+        let jb = document.getElementsByClassName("jb")[0];
         img.width = 180;
         return(
             <>
             <Wrapper>
                 {/* <div className="myDiv">제비섞기</div> */}
                 <div>추첨할 인원수{this.state.num}명</div>
-                <div onClick = {this.jb}>제비섞기</div>
-                <div className="jjb"></div>
+                <Button onClick = {this.jb}>제비섞기</Button>
+                <Jb className="jb"></Jb>
             </Wrapper>
             </>
         )

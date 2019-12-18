@@ -50,10 +50,16 @@ const Gotogame = styled.div`
     width : 30vw;
     height : 30vh;
     padding : 2vh;
+    display : flex;
+    justify-content : center;
+    align-items : center;
+
     border : 1px solid black;
     box-sizing : border-box;
     border-radius : 20px;
     background-color : white;
+    font-size : 2em;
+
 `
 const StyledLink = styled(Link)`
 
@@ -129,7 +135,7 @@ class Main extends React.Component {
             <link href="https://fonts.googleapis.com/css?family=Hi+Melody&display=swap" rel="stylesheet"></link>
 
                 <Wrapper>
-                    <GoMain>Main</GoMain>
+                    <GoMain >Main</GoMain>
                     <GoMenu>Menu</GoMenu>
 
                     <MainWrapper >
@@ -142,12 +148,12 @@ class Main extends React.Component {
                         </RightBox>
                     </MainWrapper>
 
-                    <MenuWrapper>
+                    <MenuWrapper >
                         <Gotogame_wrapper>
-                            <StyledLink to="/lot"><Gotogame>Lot</Gotogame></StyledLink>
-                            <StyledLink to="/roulette"><Gotogame>Roulette</Gotogame></StyledLink>
-                            <StyledLink to="/quiz"><Gotogame>Quiz</Gotogame></StyledLink>
-                            <StyledLink to=""><Gotogame>X</Gotogame></StyledLink>
+                            <StyledLink to="/lot"><Gotogame>제비뽑기</Gotogame></StyledLink>
+                            <StyledLink to="/roulette"><Gotogame>룰렛</Gotogame></StyledLink>
+                            <StyledLink to="/quiz"><Gotogame>퀴즈</Gotogame></StyledLink>
+                            <StyledLink to=""><Gotogame>예정</Gotogame></StyledLink>
                         </Gotogame_wrapper>
                     </MenuWrapper>
 
