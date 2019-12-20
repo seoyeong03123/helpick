@@ -201,6 +201,8 @@ class Lot extends React.Component{
                 <div>추첨할 인원수{this.state.num}명</div>
                 <Button onClick = {this.jb}>제비섞기</Button>
                 <Jb className="jb"></Jb>
+
+                <p>▶돌아가기</p>
             </Wrapper>
             </>
         )
